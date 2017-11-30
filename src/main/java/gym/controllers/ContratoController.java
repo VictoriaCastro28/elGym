@@ -17,7 +17,7 @@ public class ContratoController {
 	@Autowired 
 	private ContratoRepository contratoRepository;
 	
-	@GetMapping(path="/create") 
+	@GetMapping(path="/save") 
 	public @ResponseBody String agregarContrato (@RequestParam Integer idUsuario
 			, @RequestParam String fecha,@RequestParam Integer membresia,@RequestParam Integer sucursal) {
 
@@ -31,7 +31,7 @@ public class ContratoController {
 		return "el usuario ha sido guardado";
 	}
 	
-	@GetMapping(path="/read-all")
+	@GetMapping(path="/find-all")
 	public @ResponseBody Iterable<Contrato> getAllContratos() {
 		// This returns a JSON or XML with the users
 		return contratoRepository.findAll();

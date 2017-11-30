@@ -1,12 +1,9 @@
 package gym.repositories;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import gym.models.Usuario;
 
-// This will be AUTO IMPLEMENTED by Spring into a Bean called usuarioRepository
-// CRUD refers Create, Read, Update, Delete
-
-public interface UsuarioRepository extends CrudRepository<Usuario, Long> {
-
+public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
+	Usuario findByNombre(String nombre);
 }
