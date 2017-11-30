@@ -19,14 +19,14 @@ public class MainController {
 	      return "/home";
 	  }
 	
-	@GetMapping(value = "/login")
+	@GetMapping(value = "/loginDePrueba")
 	  public String login() {
-	      return "/login";
+	      return "/loginDePrueba";
 	  }
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	  public String autentificar() {
-	      return "/main";
+	      return "/loginDePrueba";
 	  }
 	
 	@GetMapping(value = "/registrar")
@@ -35,9 +35,9 @@ public class MainController {
 	  }
   
 	
-	@GetMapping(value = "/main")
+	@GetMapping(value = "/saludo")
 	  public String main() {			
-	      return "/main";
+	      return "/saludo";
 	  }
 
 }
