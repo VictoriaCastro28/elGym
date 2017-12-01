@@ -14,11 +14,13 @@ import gym.repositories.AdminRepository;
 @RequestMapping(path="/admin") 
 public class AdminController {
 	
+	
+	
 	@Autowired 
 	private AdminRepository _rep;
 	
 	@GetMapping(path="/save") 
-	public @ResponseBody String agregarUsuario (@RequestParam String nombre
+	public @ResponseBody String agregarAdmin (@RequestParam String nombre
 			, @RequestParam String apellido, @RequestParam String correo, @RequestParam String clave) {
 
 		 if (_rep.findByNombre(nombre) != null) {
@@ -35,8 +37,8 @@ public class AdminController {
 	}
 	
 	@GetMapping(path="/find-all")
-	public @ResponseBody Iterable<Admin> getAllUsers() {
-		// This returns a JSON or XML with the users
+	public @ResponseBody Iterable<Admin> getAllAdmins() {
+	
 		return _rep.findAll();
 	}
 }

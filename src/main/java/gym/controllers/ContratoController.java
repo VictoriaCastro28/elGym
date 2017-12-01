@@ -1,5 +1,9 @@
 package gym.controllers;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,9 +18,14 @@ import gym.repositories.ContratoRepository;
 @Controller   
 @RequestMapping(path="/contrato") 
 public class ContratoController {
-	@Autowired 
-	private ContratoRepository contratoRepository;
 	
+	@Autowired 
+	private ContratoRepository _rep;
+	
+	@PersistenceContext
+	  private EntityManager em;
+	
+
 	@GetMapping(path="/save") 
 	public @ResponseBody String agregarContrato (@RequestParam Integer idUsuario
 			, @RequestParam String fecha,@RequestParam Integer membresia,@RequestParam Integer sucursal) {
@@ -27,13 +36,19 @@ public class ContratoController {
 		n.setIdMembresia(membresia);
 		n.setIdSucursal(sucursal);
 
-		contratoRepository.save(n);
+		_rep.save(n);
 		return "el usuario ha sido guardado";
 	}
 	
 	@GetMapping(path="/find-all")
-	public @ResponseBody Iterable<Contrato> getAllContratos() {
-		// This returns a JSON or XML with the users
-		return contratoRepository.findAll();
+	public @ResponseBody Iterable<Contrato> getAll() {
+		
+		return _rep.findAll();
+	}
+	
+	@GetMapping(path="/find-by-sucursal")
+	public @ResponseBody Iterable<Contrato> getBySucursal(@RequestParam Integer idSucursal) {
+		  
+		return _rep.findByIdSucursal(idSucursal);
 	}
 }

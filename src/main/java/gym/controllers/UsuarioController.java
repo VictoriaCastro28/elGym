@@ -20,13 +20,9 @@ public class UsuarioController {
 	@GetMapping(path="/save") 
 	public @ResponseBody String agregarUsuario (@RequestParam String nombre
 			, @RequestParam String apellido, @RequestParam String correo) {
-		// @ResponseBody means the returned String is the response, not a view name
-		// @RequestParam means it is a parameter from the GET or POST request
-		
 		 if (_rep.findByNombre(nombre) != null) {
 				return "Ya existe un usuario con ese nombre";
-			}
-		
+			}	
 		Usuario n = new Usuario();
 		n.setNombre(nombre);
 		n.setApellido(apellido);
@@ -36,8 +32,7 @@ public class UsuarioController {
 	}
 	
 	@GetMapping(path="/find-all")
-	public @ResponseBody Iterable<Usuario> getAllUsers() {
-		// This returns a JSON or XML with the users
+	public @ResponseBody Iterable<Usuario> getAllUsuarios() {
 		return _rep.findAll();
 	}
 }
