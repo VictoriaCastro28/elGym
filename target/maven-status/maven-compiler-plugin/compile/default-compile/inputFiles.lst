@@ -1,0 +1,16 @@
+/home/abraham/elGym/src/main/java/gym/controllers/AdminController.java
+/home/abraham/elGym/src/main/java/gym/models/Admin.java
+/home/abraham/elGym/src/main/java/gym/models/Contrato.java
+/home/abraham/elGym/src/main/java/gym/models/Usuario.java
+/home/abraham/elGym/src/main/java/gym/models/Membresia.java
+/home/abraham/elGym/src/main/java/gym/controllers/UsuarioController.java
+/home/abraham/elGym/src/main/java/gym/models/pks/ContratoPk.java
+/home/abraham/elGym/src/main/java/gym/controllers/MainController.java
+/home/abraham/elGym/src/main/java/gym/repositories/UsuarioRepository.java
+/home/abraham/elGym/src/main/java/gym/repositories/AdminRepository.java
+/home/abraham/elGym/src/main/java/gym/models/Sucursal.java
+/home/abraham/elGym/src/main/java/gym/Application.java
+/home/abraham/elGym/src/main/java/gym/configs/SpringSecurityConfig.java
+/home/abraham/elGym/src/main/java/gym/services/UserDetailsServiceImpl.java
+/home/abraham/elGym/src/main/java/gym/controllers/ContratoController.java
+/home/abraham/elGym/src/main/java/gym/repositories/ContratoRepository.java
